@@ -4,32 +4,31 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.example.win8.landscapeapp.DB.DBList;
 
 import java.util.ArrayList;
 
-public class ListViewNature extends AppCompatActivity {
+public class ListViewMountain extends AppCompatActivity {
 
     private DBList mHelper;
     private SQLiteDatabase mDb;
-    private ArrayList<PictureItem>  mPictureItemList = new ArrayList<>();
+    private ArrayList<PictureItem> mPictureItemList = new ArrayList<>();
     private AdapterList adapterList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view_nature);
+        setContentView(R.layout.activity_list_view_mountain);
 
         mHelper = new DBList(this);
         mDb = mHelper.getReadableDatabase();
 
         loadDataFromDb();
-//        ArrayList<PictureItem> currentPictureItem = checkType("Nature");
+//        ArrayList<PictureItem> currentPictureItem = checkType("MOUNTAIN");
 
-        adapterList = new AdapterList(this,R.layout.activity_nature, checkType("NATURE"));
+        adapterList = new AdapterList(this,R.layout.activity_mountain, checkType("MOUNTAIN"));
         ListView iv = findViewById(R.id.list_view);
         iv.setAdapter(adapterList);
 
@@ -49,7 +48,7 @@ public class ListViewNature extends AppCompatActivity {
 
         mPictureItemList.clear();
 
-        int count = 0;
+
         while (cursor.moveToNext()) {
             int id = cursor.getInt(cursor.getColumnIndex(DBList.COL_ID));
             String type = cursor.getString(cursor.getColumnIndex(DBList.COL_TYPE));
@@ -73,4 +72,3 @@ public class ListViewNature extends AppCompatActivity {
         return currentPictureItem;
     }
 }
-

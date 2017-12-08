@@ -13,8 +13,8 @@ import com.example.win8.landscapeapp.R;
 
 public class DBList extends SQLiteOpenHelper{
 
-    private static final String DATABASE_NAME ="pic.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME ="image.db";
+    private static final int DATABASE_VERSION = 8;
 
     public static final String COL_TYPE = "type";
     public static final String COL_PICTURE = "picture";
@@ -25,9 +25,10 @@ public class DBList extends SQLiteOpenHelper{
             + TABLE_NAME + "("
             + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_TYPE + " TEXT, "
-            + COL_PICTURE + "INTEGER)";
+            + COL_PICTURE + " INTEGER)";
 
     public DBList(Context context) {
+
         super(context, DATABASE_NAME,null,DATABASE_VERSION);
     }
 
@@ -39,37 +40,183 @@ public class DBList extends SQLiteOpenHelper{
     private void insertInitialData(SQLiteDatabase db) {
         ContentValues cv = new ContentValues();
         cv.put(COL_TYPE, "NATURE");
-        cv.put(COL_PICTURE, "nature_one.jpg");
+        cv.put(COL_PICTURE, R.drawable.nature_one);
         db.insert(TABLE_NAME, null, cv);
 
         cv = new ContentValues();
-
         cv.put(COL_TYPE, "NATURE");
-        cv.put(COL_PICTURE, "nature_two.jpg");
+        cv.put(COL_PICTURE, R.drawable.nature_two);
         db.insert(TABLE_NAME, null, cv);
 
         cv = new ContentValues();
-
         cv.put(COL_TYPE, "NATURE");
-        cv.put(COL_PICTURE, "nature_three.jpg");
+        cv.put(COL_PICTURE, R.drawable.nature_three);
         db.insert(TABLE_NAME, null, cv);
 
         cv = new ContentValues();
-
         cv.put(COL_TYPE, "NATURE");
-        cv.put(COL_PICTURE, "nature_four.jpg");
+        cv.put(COL_PICTURE, R.drawable.nature_four);
         db.insert(TABLE_NAME, null, cv);
 
         cv = new ContentValues();
-
         cv.put(COL_TYPE, "NATURE");
-        cv.put(COL_PICTURE, "nature_five.jpg");
+        cv.put(COL_PICTURE, R.drawable.nature_five);
         db.insert(TABLE_NAME, null, cv);
 
         cv = new ContentValues();
-
         cv.put(COL_TYPE, "NATURE");
-        cv.put(COL_PICTURE,"nature_six.jpg");
+        cv.put(COL_PICTURE,R.drawable.nature_six);
+        db.insert(TABLE_NAME, null, cv);
+
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "BUILDING");
+        cv.put(COL_PICTURE, R.drawable.bulid_one);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "BUILDING");
+        cv.put(COL_PICTURE, R.drawable.bulid_two);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "BUILDING");
+        cv.put(COL_PICTURE, R.drawable.bulid_three);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "BUILDING");
+        cv.put(COL_PICTURE, R.drawable.bulid_four);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "BUILDING");
+        cv.put(COL_PICTURE, R.drawable.bulid_five);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "BUILDING");
+        cv.put(COL_PICTURE, R.drawable.bulid_six);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "FLOWER");
+        cv.put(COL_PICTURE, R.drawable.flower_one);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "FLOWER");
+        cv.put(COL_PICTURE, R.drawable.flower_two);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "FLOWER");
+        cv.put(COL_PICTURE, R.drawable.flower_three);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "FLOWER");
+        cv.put(COL_PICTURE, R.drawable.flower_four);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "FLOWER");
+        cv.put(COL_PICTURE, R.drawable.flower_five);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "FLOWER");
+        cv.put(COL_PICTURE, R.drawable.flower_six);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SUNSET");
+        cv.put(COL_PICTURE, R.drawable.sunset_one);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SUNSET");
+        cv.put(COL_PICTURE, R.drawable.sunset_two);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SUNSET");
+        cv.put(COL_PICTURE, R.drawable.sunset_three);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SUNSET");
+        cv.put(COL_PICTURE, R.drawable.sunset_four);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SUNSET");
+        cv.put(COL_PICTURE, R.drawable.sunset_five);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SUNSET");
+        cv.put(COL_PICTURE, R.drawable.sunset_six);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "MOUNTAIN");
+        cv.put(COL_PICTURE, R.drawable.moun_one);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "MOUNTAIN");
+        cv.put(COL_PICTURE, R.drawable.moun_two);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "MOUNTAIN");
+        cv.put(COL_PICTURE, R.drawable.moun_three);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "MOUNTAIN");
+        cv.put(COL_PICTURE, R.drawable.moun_four);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "MOUNTAIN");
+        cv.put(COL_PICTURE, R.drawable.moun_five);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "MOUNTAIN");
+        cv.put(COL_PICTURE, R.drawable.moun_six);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SKY");
+        cv.put(COL_PICTURE, R.drawable.sky_one);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SKY");
+        cv.put(COL_PICTURE, R.drawable.sky_two);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SKY");
+        cv.put(COL_PICTURE, R.drawable.sky_three);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SKY");
+        cv.put(COL_PICTURE, R.drawable.sky_four);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SKY");
+        cv.put(COL_PICTURE, R.drawable.sky_five);
+        db.insert(TABLE_NAME, null, cv);
+
+        cv = new ContentValues();
+        cv.put(COL_TYPE, "SKY");
+        cv.put(COL_PICTURE, R.drawable.sky_six);
         db.insert(TABLE_NAME, null, cv);
 
     }

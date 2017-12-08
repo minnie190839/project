@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    tools:context="com.example.win8.landscapeapp.Nature">
+    tools:context="com.example.win8.landscapeapp.Mountain">
 
     <ImageView
         android:id="@+id/img"

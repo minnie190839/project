@@ -8,9 +8,9 @@ public class PictureItem {
 
         public final int id;
         public final String type;
-        public final String picture;
+        public final int picture;
 
-        public PictureItem(int id, String type, String picture) {
+        public PictureItem(int id, String type, int picture) {
             this.id = id;
             this.type = type;
             this.picture = picture;

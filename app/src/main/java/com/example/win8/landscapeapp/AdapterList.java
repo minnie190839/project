@@ -36,26 +36,17 @@ public class AdapterList extends ArrayAdapter<PictureItem> {
     }
 @NonNull
 @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View itemLayout = inflater.inflate(mLayoutResId, null);
+public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    LayoutInflater inflater = LayoutInflater.from(mContext);
+    View itemLayout = inflater.inflate(mLayoutResId, null);
 
-        PictureItem item = mPictureItemList.get(position);
+    PictureItem item = mPictureItemList.get(position);
 
-        ImageView picture = itemLayout.findViewById(R.id.img);
+    ImageView picImageView = itemLayout.findViewById(R.id.img);
 
-        String pictureFileName = item.picture;
-
-    AssetManager am = mContext.getAssets();
-    try {
-        InputStream stream = am.open(pictureFileName);
-        Drawable drawable = Drawable.createFromStream(stream, null);
-        picture.setImageDrawable(drawable);
-
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+    picImageView.setImageResource(item.picture);
 
     return itemLayout;
+    }
 }
-}
+

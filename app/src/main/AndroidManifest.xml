@@ -18,7 +18,17 @@
         </activity>
         <activity android:name=".Catagory" />
         <activity android:name=".Nature" />
-        <activity android:name=".ListViewNature"></activity>
+        <activity android:name=".ListViewNature" />
+        <activity android:name=".ListViewFlower" />
+        <activity android:name=".Flower" />
+        <activity android:name=".Building" />
+        <activity android:name=".ListViewBuild" />
+        <activity android:name=".ListViewMountain" />
+        <activity android:name=".Mountain" />
+        <activity android:name=".Sky" />
+        <activity android:name=".ListViewSky" />
+        <activity android:name=".Sunset" />
+        <activity android:name=".ListViewSunset"></activity>
     </application>
 
 </manifest>

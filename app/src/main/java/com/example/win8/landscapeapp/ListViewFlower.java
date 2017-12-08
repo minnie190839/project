@@ -4,32 +4,31 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.example.win8.landscapeapp.DB.DBList;
 
 import java.util.ArrayList;
 
-public class ListViewNature extends AppCompatActivity {
+public class ListViewFlower extends AppCompatActivity {
 
     private DBList mHelper;
     private SQLiteDatabase mDb;
-    private ArrayList<PictureItem>  mPictureItemList = new ArrayList<>();
+    private ArrayList<PictureItem> mPictureItemList = new ArrayList<>();
     private AdapterList adapterList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view_nature);
+        setContentView(R.layout.activity_list_view_flower);
 
         mHelper = new DBList(this);
         mDb = mHelper.getReadableDatabase();
 
         loadDataFromDb();
-//        ArrayList<PictureItem> currentPictureItem = checkType("Nature");
+//        ArrayList<PictureItem> currentPictureItem = checkType("FLOWER");
 
-        adapterList = new AdapterList(this,R.layout.activity_nature, checkType("NATURE"));
+        adapterList = new AdapterList(this,R.layout.activity_flower, checkType("FLOWER"));
         ListView iv = findViewById(R.id.list_view);
         iv.setAdapter(adapterList);
 
