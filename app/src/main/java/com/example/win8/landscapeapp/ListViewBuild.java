@@ -16,16 +16,16 @@ public class ListViewBuild extends AppCompatActivity {
     private SQLiteDatabase mDb;
     private ArrayList<PictureItem> mPictureItemList = new ArrayList<>();
     private AdapterList adapterList;
-
+// การประกาศ object เรียกใช้คลาส
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_build);
 
-        mHelper = new DBList(this);
-        mDb = mHelper.getReadableDatabase();
+        mHelper = new DBList(this); //สร้างก้อนๆหนึ่งไว้ชื่อ DBList
+        mDb = mHelper.getReadableDatabase(); // นำข้อมูลทั้งหมดใน mhelper ไปเก็บไว้ใน Mdb
 
-        loadDataFromDb();
+        loadDataFromDb(); //เรียกใช้ method
 //        ArrayList<PictureItem> currentPictureItem = checkType("BUILDING");
 
         adapterList = new AdapterList(this,R.layout.activity_building, checkType("BUILDING"));
@@ -33,7 +33,7 @@ public class ListViewBuild extends AppCompatActivity {
         iv.setAdapter(adapterList);
 
     }
-
+//ต้องการ check type ว่าอยู่ใน ประเภทนั้นรึเปล่า สมมุติว่า ถ้ามีคำว่า sky ก็จะให้ออกหน้า layuot ที่ตรงกับชื่อ
     private void loadDataFromDb() {
         Cursor cursor = mDb.query(
                 DBList.TABLE_NAME,

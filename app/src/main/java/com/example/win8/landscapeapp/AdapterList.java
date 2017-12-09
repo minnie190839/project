@@ -25,7 +25,7 @@ public class AdapterList extends ArrayAdapter<PictureItem> {
 
     private Context mContext;
     private int mLayoutResId;
-    private ArrayList<PictureItem> mPictureItemList ;
+    private ArrayList<PictureItem> mPictureItemList ; //สร้าง arraylist ที่ชื่อว่า mPictureItemList
 
     public AdapterList(@NonNull Context context, int layoutResId, @NonNull ArrayList<PictureItem> picItemList) {
         super(context, layoutResId, picItemList);
@@ -38,14 +38,17 @@ public class AdapterList extends ArrayAdapter<PictureItem> {
 @Override
 public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
     LayoutInflater inflater = LayoutInflater.from(mContext);
-    View itemLayout = inflater.inflate(mLayoutResId, null);
+    View itemLayout = inflater.inflate(mLayoutResId, null);//ที่เราทำทั้งหมดมันอยู่ใน mLayoutResId
 
     PictureItem item = mPictureItemList.get(position);
+    //สั่งให้เอาค่า position ที่อยู่ใน mPictureItemList ไปเก็บไว้ object ชื่อ item
+
 
     ImageView picImageView = itemLayout.findViewById(R.id.img);
+    //
 
     picImageView.setImageResource(item.picture);
-
+    //set ค่าตำแหน่งของ resource รูป
     return itemLayout;
     }
 }

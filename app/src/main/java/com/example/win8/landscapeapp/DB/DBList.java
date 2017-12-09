@@ -21,11 +21,14 @@ public class DBList extends SQLiteOpenHelper{
     public static final String TABLE_NAME ="pic_image";
     public static final String COL_ID = "_id";
 
+    //การตั้งค่าเริ่มต้นให้กับฐานข้อมูล(DB)
+
     private static final String CREATE_TABLE = "CREATE TABLE "
             + TABLE_NAME + "("
             + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_TYPE + " TEXT, "
-            + COL_PICTURE + " INTEGER)";
+            + COL_PICTURE + " INTEGER)"; //เก็บไฟล์ภาพที่ drawable เลยต้องเก็บค่าให้เป็น integer
+    //สร้างตารางขึ้นมา โดยกำหนดให้ id เป็น primary key
 
     public DBList(Context context) {
 
@@ -34,9 +37,10 @@ public class DBList extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE);
-        insertInitialData(db);
+        db.execSQL(CREATE_TABLE); // สร้างฐานข้อมูล database
+        insertInitialData(db); // เรียกใช้ method พร้อมส่งค่า db ไปเรียกใช้
     }
+
     private void insertInitialData(SQLiteDatabase db) {
         ContentValues cv = new ContentValues();
         cv.put(COL_TYPE, "NATURE");
@@ -220,6 +224,7 @@ public class DBList extends SQLiteOpenHelper{
         db.insert(TABLE_NAME, null, cv);
 
     }
+    //การ insert ค่าเข้าไปใน database
 
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME);
